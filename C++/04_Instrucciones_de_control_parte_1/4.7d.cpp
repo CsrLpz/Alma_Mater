@@ -1,0 +1,1 @@
+int potencia = 1;

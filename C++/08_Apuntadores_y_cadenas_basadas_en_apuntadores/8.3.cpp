@@ -1,0 +1,43 @@
+#include <iostream>
+using std::cout;
+using std::cin;
+using std::endl;
+#include <iomanip>
+using std::setprecision;
+#include <conio.h>
+
+int main()
+{
+	///////////////////////////////////////////////////////////////////
+	const int TAMANIO = 10;
+	double numeros[TAMANIO] = { 0.0,1.1,2.2,3.3,4.4,5.5,6.6,7.7,8.8,9.9 };	//a)
+	//////////////////////////////////////////////////////////////////
+	double *nPtr = NULL;	//b)
+	//////////////////////////////////////////////////////////////////
+	for (int i = 0; i < TAMANIO; i++)
+		cout << setprecision(3) << numeros[i] << ", ";	//c)
+	cout << endl;
+	/////////////////////////////////////////////////////////////////
+	nPtr = &numeros[0];
+	nPtr = numeros;		//d)
+	/////////////////////////////////////////////////////////////////
+	for (int j = 0; j < TAMANIO; j++)
+		cout << *(nPtr + j) << ", ";	//e)
+	cout << endl;
+	/////////////////////////////////////////////////////////////////
+	for (int k = 0; k < TAMANIO; k++)
+		cout << *(numeros + k) << ", ";	//f)
+	cout << endl;
+	/////////////////////////////////////////////////////////////////
+	for (int l = 0; l < TAMANIO; l++)
+		cout << nPtr[l] << ", ";		//g)
+	cout << endl;
+	/////////////////////////////////////////////////////////////////
+	cout << numeros[3] << endl;
+	cout << *(numeros + 3) << endl;
+	cout << nPtr[3] << endl;			//h)
+	cout << *(nPtr + 3) << endl;
+	/////////////////////////////////////////////////////////////////
+	_getch();
+	return 0;
+}
